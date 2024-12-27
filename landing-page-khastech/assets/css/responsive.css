@@ -1,0 +1,7 @@
+@media screen and (min-width: 1280px) and (min-height: 800px) {
+  main .jumbotroon {
+    height: 60vh;
+  }
+  .c-card {
+  }
+}
