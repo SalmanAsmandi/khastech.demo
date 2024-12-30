@@ -5,3 +5,20 @@
   .c-card {
   }
 }
+
+/* mobile */
+@media screen and (max-width: 789px) {
+  #hamburger {
+    display: block;
+    padding-right: 5rem;
+  }
+  ul,
+  nav {
+    display: none;
+  }
+  main .jumbotroon {
+    width: 100% !important;
+    padding: 0;
+    background-color: aqua;
+  }
+}

@@ -33,8 +33,41 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     },
-    { threshold: 0.1 } // Elemen terlihat 10% sebelum animasi
+    { threshold: 0.2 } // Elemen terlihat 10% sebelum animasi
   );
 
   elements.forEach((el) => observer.observe(el));
+});
+
+// slide card portofolio
+const slider = document.querySelector(".card-slider");
+const dots = document.querySelectorAll(".dot");
+const cards = document.querySelectorAll(".card");
+const cardWidth = cards[0].offsetWidth;
+let currentIndex = 0;
+
+function updateDots(index) {
+  dots.forEach((dot, i) => {
+    dot.classList.toggle("active", i === index);
+  });
+}
+
+dots.forEach((dot, index) => {
+  dot.addEventListener("click", () => {
+    currentIndex = index;
+    slider.scrollTo({
+      left: cardWidth * index,
+      behavior: "smooth",
+    });
+    updateDots(index);
+  });
+});
+
+slider.addEventListener("scroll", () => {
+  const sliderScrollLeft = slider.scrollLeft;
+  const newIndex = Math.round(sliderScrollLeft / cardWidth);
+  if (newIndex !== currentIndex) {
+    currentIndex = newIndex;
+    updateDots(newIndex);
+  }
 });

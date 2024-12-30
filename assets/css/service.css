@@ -1,15 +1,17 @@
 body {
-  color: #000000e7;
+  color: #000000e1;
 }
 .service-jumbotroon {
-  padding-inline: 5rem;
-  background-image: url("../images/sun-tornado.svg");
-  background-size: cover;
-  background-repeat: repeat;
+  background-image: url("../images/cornered-stairs.svg");
+  background-repeat: no-repeat;
   height: 100vh;
+  background-size: cover;
+  padding-inline: 5rem;
+  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .service-jumbotroon .con {
@@ -50,4 +52,27 @@ body {
 }
 .service-our p {
   line-height: 30px;
+}
+.service-con,
+.service-con1 {
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 5rem;
+  padding-bottom: 5rem;
+  gap: 3rem;
+  align-items: center;
+}
+.service-con .text h2 {
+  color: #1d6e42;
+  font-size: 1rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.service-con .text p {
+  line-height: 30px;
+  font-size: 1rem;
+  text-align: justify;
+}
+.service-con img {
+  border-radius: 10px;
 }

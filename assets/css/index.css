@@ -8,6 +8,7 @@
 body {
   position: relative;
   background-color: white;
+  color: #000000e1;
   width: 100%;
 }
 header {
@@ -121,7 +122,7 @@ header a:hover {
 main .jumbotroon {
   background-image: url("../images/jumbotroon.jpeg");
   background-size: cover;
-  background-position: 0 -400px;
+  background-position: 0 -300px;
   background-repeat: no-repeat;
   height: 100vh;
   padding-bottom: 12rem;
@@ -133,6 +134,7 @@ main .jumbotroon .kata {
   margin-left: 5rem;
   padding-top: 12rem;
   color: white;
+  box-sizing: border-box;
   font-weight: bold;
 }
 main .jumbotroon .kata p {
@@ -162,15 +164,19 @@ main .jumbotroon .kata h4 {
   text-decoration: none;
 }
 
+.con-card-alasan {
+  background-image: url("../images/sun-tornado.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 7rem;
+  /* background-attachment: fixed; */
+}
 /* card */
 .c-card {
-  background-image: url(../images/sun-tornado.svg);
-  background-size: cover;
-  /* background-position: 0 -100px; */
-  /* height: 100vh; */
+  padding-inline: 5rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  padding-inline: 5rem;
+
   gap: 2rem;
   justify-content: center;
   padding-bottom: 5rem;
@@ -187,11 +193,11 @@ main .jumbotroon .kata h4 {
   box-sizing: border-box;
   border-radius: 10px;
   height: 22rem;
-  border: 2px solid white;
+  border: 2px solid #1d6e42;
   transition: 0.5s;
 }
 .c-card .card:hover {
-  border: 2px solid #28a745;
+  border: 2px solid white;
 }
 .c-card .card .isi img {
   width: 3.5rem;
@@ -206,7 +212,7 @@ main .jumbotroon .kata h4 {
   border-radius: 10px;
   padding: 16px;
   box-sizing: border-box;
-  height: 24rem;
+  height: 25rem;
   position: relative;
 }
 .c-card .card .isi h3 {
@@ -219,7 +225,6 @@ main .jumbotroon .kata h4 {
 .c-card .card .isi a {
   color: #1d6e42;
   text-align: center;
-  margin-top: 12px;
   font-size: 0.89rem;
   text-decoration: none;
   display: block;
@@ -231,15 +236,122 @@ main .jumbotroon .kata h4 {
 .c-card .card .isi a:hover {
   color: #28a745;
 }
+/* portofolio */
+
+.portofolio {
+  text-align: center;
+  background-color: white;
+  padding: 5rem;
+}
+
+.teks h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #1d6e42;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.portofolio .teks p {
+  font-size: 3rem;
+  color: #000000e1;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.card-slider-wrapper {
+  position: relative;
+}
+
+.card-slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 15px;
+  scroll-behavior: smooth;
+  padding: 20px 0;
+}
+.card-slider {
+  display: flex;
+  overflow-x: scroll; /* Pastikan elemen bisa di-scroll */
+  gap: 15px;
+  scroll-behavior: smooth;
+  padding: 20px 0;
+}
+
+.card-slider::-webkit-scrollbar {
+  display: none; /* Sembunyikan scrollbar */
+}
+
+.card-isi-slide {
+  position: relative;
+  width: 100%;
+  min-width: 400px;
+  height: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.card-isi-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card-isi-slide:hover img {
+  transform: scale(1.1);
+}
+
+.card-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #1d6e42;
+  color: #fff;
+  font-size: 0.89rem;
+  padding: 10px;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.3s ease;
+}
+
+.card-isi-slide:hover .card-info {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.pagination-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-block: 1rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  background-color: #ccc;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.dot.active {
+  background-color: #1d6e42;
+  height: 13px;
+  width: 13px;
+}
 
 /* siapa kami */
-.siapa-kami,
-.alasan {
-  padding-top: 5rem;
-  background-color: white;
-  padding-inline: 5rem;
-  padding-bottom: 5rem;
-  margin-bottom: 10rem;
+
+.siapa-kami {
+  padding: 5rem;
 }
 .siapa-kami h2 {
   text-transform: uppercase;
@@ -270,14 +382,10 @@ main .jumbotroon .kata h4 {
 }
 /* alasan kami */
 .alasan {
-  /* background-image: url("../images/svg.svg"); */
-  background-color: white;
-  background-repeat: repeat;
-  background-size: cover;
-  background-position: 0 -100px;
+  padding: 5rem;
 }
 .alasan .kontent .teks h2 {
-  color: #1d6e42;
+  color: white;
   text-align: center;
   text-transform: uppercase;
   font-size: 1rem;
@@ -308,16 +416,16 @@ main .jumbotroon .kata h4 {
   gap: 1rem;
 }
 .card-alasan .card {
-  background-color: transparent;
+  background-color: white;
   backdrop-filter: blur(24px);
   height: 17rem;
   padding: 16px;
   box-sizing: border-box;
-  box-shadow: 0 2px 3px 1px #00000033;
+  /* box-shadow: 0 2px 3px 1px #00000033; */
   border-radius: 10px;
   text-align: center;
   transition: 0.3s;
-  border: 1px solid #1d6e42;
+  /* border: 1px solid #1d6e42; */
 }
 .card-alasan .card:hover {
   border: none;
@@ -394,4 +502,9 @@ main .jumbotroon .kata h4 {
   color: white;
   /* font-weight: 600; */
   text-decoration: none;
+}
+
+#hamburger {
+  font-size: 2rem;
+  display: none;
 }

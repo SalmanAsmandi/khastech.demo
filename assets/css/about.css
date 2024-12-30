@@ -1,5 +1,5 @@
 body {
-  color: #000000e7;
+  color: #000000e1;
 }
 .about-jumbotroon {
   background-image: url("../images/cornered-stairs.svg");
@@ -130,6 +130,11 @@ body {
   margin-bottom: 5rem;
   text-transform: capitalize;
 }
+.about-ahli .text {
+  line-height: 30px;
+  margin-top: 5rem;
+  color: #1d6e42;
+}
 .about-card {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -141,11 +146,11 @@ body {
   border-radius: 10px;
   box-shadow: 0 1px 1px 1px #00000017;
   transition: 0.3s;
+  border: 1px solid #1d6e42;
 }
 .about-card .a-card:hover {
   transform: scale(1.03);
   box-shadow: none;
-  border: 1px solid #1d6e42;
 }
 .about-card .a-card img {
   width: 70px;
